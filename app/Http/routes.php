@@ -30,23 +30,77 @@ Route::group(["prefix" => "admin","namespace" => "admin"],function(){
         Route::get('search','AdminController@search');
 
         Route::get('admin_permission','AdminController@admin_permission');
+
+        Route::get('admin_add','AdminController@admin_add');
+        Route::post('add_admin','AdminController@add_admin');
 });
 
 
 
 
+//系统统计
+
+Route::group(["prefix"=>"admin","namespace"=>"admin"],function(){
+
+    Route::get('charts_1','ChartsController@charts_1');
+    Route::get('charts_2','ChartsController@charts_2');
+    Route::get('charts_3','ChartsController@charts_3');
+    Route::get('charts_4','ChartsController@charts_4');
+    Route::get('charts_5','ChartsController@charts_5');
+    Route::get('charts_6','ChartsController@charts_6');
+    Route::get('charts_7','ChartsController@charts_7');
+
+
+});
+
+   
+
+
+//会员管理
+Route::group(["prefix"=>"admin","namespace"=>"admin"],function(){
+
+    Route::get('member_add','MemberController@member_add');
+    Route::get('member_del','MemberController@member_del');
+    Route::get('member_list','MemberController@member_list');
+    Route::get('member_show','MemberController@member_show');
+    Route::get('member_record_browse','MemberController@member_record_browse');
+    Route::get('member_record_download','MemberController@member_record_download');
+    Route::get('member_record_share','MemberController@member_record_share');
+
+
+  });
 
 
 
+//系统管理
+Route::group(["prefix"=>"admin","namespace"=>"admin"],function(){
+    Route::get('system_base','SystemController@system_base');
+    Route::get('system_category','SystemController@system_category');
+    Route::get('system_data','SystemController@system_data');
+    Route::get('system_shielding','SystemController@system_shielding');
+    Route::get('system_log','SystemController@system_log');
+});
 
+
+
+//产品管理
+Route::group(["prefix"=>"admin","namespace"=>"admin"],function(){
+
+    Route::get('product_brand','ProductController@product_brand');
+    Route::get('product_category','ProductController@product_category');
+    Route::get('product_category_add','ProductController@product_category_add');
+    
+    Route::get('product_list','ProductController@product_list');
+    Route::get('product_add','ProductController@product_add');
+});
 
 Route::group(["prefix"=>"admin","namespace"=>"admin"],function(){
 
 
-	Route::get('add','Publiccontroller@add');	
+
 	Route::get('article_add','PublicController@article_add');
 	Route::get('picture_add','PublicController@picture_add');
-	Route::get('product_add','PublicController@product_add');
+	
 	
 
 
@@ -56,36 +110,15 @@ Route::group(["prefix"=>"admin","namespace"=>"admin"],function(){
 	Route::get('article_list','PublicController@article_list');
 	Route::get('article_class_edit','PublicController@article_class_edit');
 	Route::get('picture_list','PublicController@picture_list');
-    Route::get('product_brand','PublicController@product_brand');
-    Route::get('product_category','PublicController@product_category');
-    Route::get('product_category_add','PublicController@product_category_add');
-    
-    Route::get('product_list','PublicController@product_list');
+   
     Route::get('feedback_list','PublicController@feedback_list');
 
 
-    Route::get('member_add','PublicController@member_add');
-    Route::get('member_del','PublicController@member_del');
-    Route::get('member_list','PublicController@member_list');
-    Route::get('member_show','PublicController@member_show');
-    Route::get('member_record_browse','PublicController@member_record_browse');
-   	Route::get('member_record_download','PublicController@member_record_download');
-   	Route::get('member_record_share','PublicController@member_record_share');
-
-   	Route::get('charts_1','PublicController@charts_1');
-   	Route::get('charts_2','PublicController@charts_2');
-   	Route::get('charts_3','PublicController@charts_3');
-   	Route::get('charts_4','PublicController@charts_4');
-   	Route::get('charts_5','PublicController@charts_5');
-   	Route::get('charts_6','PublicController@charts_6');
-   	Route::get('charts_7','PublicController@charts_7');
+   
+   	
 
    	
-   	Route::get('system_base','PublicController@system_base');
-   	Route::get('system_category','PublicController@system_category');
-   	Route::get('system_data','PublicController@system_data');
-   	Route::get('system_shielding','PublicController@system_shielding');
-   	Route::get('system_log','PublicController@system_log');
+   
    	
 
 

@@ -13,7 +13,7 @@ class AdminTableSeeder extends Seeder
     {
         //
         $faker = \Faker\Factory::create('zh_CN');
-        for($i = 0; $i < 5 ; $i++){
+        for($i = 0; $i < 40 ; $i++){
         	DB::table('admin') -> insert([
         			'username' => $faker -> username(20),
         			'password' => bcrypt('123456'),

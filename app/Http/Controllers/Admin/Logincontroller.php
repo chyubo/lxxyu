@@ -14,7 +14,7 @@ class logincontroller extends Controller
 
     //后台登录页面
      public function login()
-    {
+    {   
     	return view('admin.public.login');
     }
 
@@ -26,7 +26,7 @@ class logincontroller extends Controller
 
             // $input = $request->input();
 
-          $rr= $this -> validate($request,[
+           $this -> validate($request,[
                     'username' => 'required|min:2|max:20',
                     'password' => 'required|min:6|max:20',
                     'captcha' => 'required|size:5|captcha',
@@ -50,7 +50,7 @@ class logincontroller extends Controller
     //后台退出方法  
     public function logout()
     {
-      $rlll =  Auth::guard('admin') ->logout();
+        Auth::guard('admin') ->logout();
         // dump($rlll);die;
         return redirect()->route('login');
     }
